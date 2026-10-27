@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.dev.vars
+.DS_Store
+coverage/
+dist/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/

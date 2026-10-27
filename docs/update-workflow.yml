@@ -1,0 +1,38 @@
+# Updates your copy of Hospitable Pages to the newest release.
+# Add it once to your copy on GitHub as .github/workflows/update.yml, then run
+# it whenever you like: Actions → Update from hospitable-pages → Run workflow.
+# It keeps your Worker's name, its storage (your listing data and your
+# published site) and your settings, and Cloudflare redeploys your Worker
+# after it runs.
+name: Update from hospitable-pages
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Copy the newest release
+        run: |
+          tag=$(git ls-remote --tags --sort=-v:refname https://github.com/agmadt/hospitable-pages 'v*' | grep -v '\^{}' | head -1 | sed 's#.*refs/tags/##')
+          echo "Newest release: $tag"
+          mkdir -p "$RUNNER_TEMP/release"
+          curl -fsSL "https://github.com/agmadt/hospitable-pages/archive/refs/tags/$tag.tar.gz" | tar xz -C "$RUNNER_TEMP/release" --strip-components=1
+          node "$RUNNER_TEMP/release/scripts/update-copy.mjs" "$RUNNER_TEMP/release" .
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+      - name: Save it, so Cloudflare redeploys your Worker
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Already up to date."; exit 0; fi
+          git commit -m "Update to hospitable-pages $TAG"
+          git push

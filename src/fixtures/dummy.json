@@ -1,0 +1,285 @@
+{
+  "_about": "Sample data for dummy mode (HOSPITABLE_PAT=dummy). Every response is shaped exactly like Hospitable's OpenAPI spec (test/fixtures/hospitable-openapi.json; a test rejects any field the spec doesn't list) and uses the spec's own example values wherever they work in a widget: names, policies, fees, deposits, the Airbnb listing, the Berlin address, the user, the first review and the 'Arrival information' topic. Only values that would leave a widget empty were replaced: photo URLs (the spec's don't load), 'string' placeholders, dates (calendars are generated from today), and a second property. Private fields hold SECRET values so the tests can prove they never reach a widget.",
+  "api": {
+    "user": {
+      "id": "5c05eb47-b6ec-54fe-b4b9-6e95f50b86d0",
+      "email": "john.doe@hotmail.com",
+      "name": "John Doe",
+      "business": true,
+      "company": "Johny Doe & Co",
+      "vat": null,
+      "tax_id": null,
+      "street_line1": "878 PEACHTREE ST",
+      "street_line2": null,
+      "postal_code": 30301,
+      "city": "Atlanta",
+      "region": null,
+      "country": "United States",
+      "profile_picture": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces&q=80",
+      "acting_user": null
+    },
+    "properties": [
+      {
+        "id": "550e8400-e29b-41d4-a716-446655440000",
+        "name": "Relaxing Villa near the sea",
+        "public_name": "Relaxing Villa near the sea",
+        "picture": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&q=80",
+        "address": {
+          "number": "12",
+          "street": "Jl. SECRET Street",
+          "city": "Uluwatu",
+          "state": "Bali",
+          "country": "ID",
+          "country_name": "Indonesia",
+          "postcode": "80361",
+          "coordinates": { "latitude": "-8.8291", "longitude": "115.0849" },
+          "display": "12 Jl. SECRET Street, 80361 Uluwatu, ID"
+        },
+        "timezone": "+0800",
+        "listed": true,
+        "amenities": ["shower", "oven", "wifi", "pool", "air_conditioning", "kitchen", "free_parking", "ocean_view", "washer", "dishwasher", "coffee_maker", "bbq_grill", "smart_tv", "hair_dryer", "bed_linens", "first_aid_kit", "smoke_detector", "outdoor_shower", "Private chef on request"],
+        "description": "Perched on the limestone cliffs of Uluwatu, this calm, open-plan villa is built around a 12-metre infinity pool that seems to pour straight into the Indian Ocean.\n\nThree air-conditioned bedrooms open onto the garden, each with its own bathroom. The living pavilion has a fully equipped kitchen, a long teak dining table and a sunken lounge facing west, so every evening ends with a sunset.\n\nOur housekeeper comes in every morning, and we are happy to arrange a private chef, massages at the villa or a driver for the day.",
+        "summary": "A cliff-top villa with an infinity pool, three ensuite bedrooms and sunsets over the Indian Ocean.",
+        "check-in": "15:00",
+        "check-out": "11:00",
+        "currency": "USD",
+        "capacity": { "max": 6, "bedrooms": 3, "beds": 4, "bathrooms": 3.5 },
+        "room_details": [
+          { "type": "bedroom", "beds": [{ "type": "king_size", "quantity": 1 }] },
+          { "type": "bedroom", "beds": [{ "type": "queen_size", "quantity": 1 }] },
+          { "type": "bedroom", "beds": [{ "type": "single_bed", "quantity": 2 }] },
+          { "type": "full_bathroom", "beds": [] }
+        ],
+        "house_rules": { "pets_allowed": false, "smoking_allowed": false, "events_allowed": false, "children_allowed": true, "infants_allowed": true },
+        "listings": [
+          { "platform": "airbnb", "platform_id": "48151623", "platform_user_id": "9001", "co_hosts": [], "platform_name": "John", "platform_email": "SECRET-airbnb@example.com" },
+          { "platform": "vrbo", "platform_id": "2718281", "platform_user_id": "9002", "co_hosts": [], "platform_name": "John", "platform_email": "SECRET-vrbo@example.com" }
+        ],
+        "ical_imports": [
+          { "id": "550e8400-e29b-41d4-a716-446655440001", "url": "https://example.com/SECRET-calendar.ics", "name": "Vacation Rental Calendar", "host": { "first_name": "John", "last_name": "Doe" }, "last_sync_at": "2019-01-01T12:00:00Z", "disconnected_at": null }
+        ],
+        "ical_feed": "webcal://api.hospitable.com/v1/properties/reservations.ics?key=1&token=SECRET-550e8400-e29b-41d4-a716-446655440000&noCache",
+        "tags": ["Tag"],
+        "property_type": "villa",
+        "room_type": "entire_home",
+        "calendar_restricted": false,
+        "parent_child": null,
+        "details": {
+          "space_overview": "The villa is laid out as three pavilions around the pool. The main pavilion holds the living room, dining area and kitchen, with sliding walls that disappear completely in good weather.\n\nThe main bedroom has a king bed, a sunken bathtub and its own terrace. The two garden bedrooms share a covered walkway and each has a bathroom with a rain shower.",
+          "guest_access": "SECRET guest access: side gate code 4711",
+          "house_manual": "SECRET house manual: alarm code 2580",
+          "other_details": "SECRET other details for staff",
+          "additional_rules": "Quiet hours are from 10 pm to 7 am.\nPlease use the pool towels by the pool and keep the bath towels inside.\nNo glass in or around the pool.",
+          "neighborhood_description": "Uluwatu sits on the southern tip of the Bukit peninsula, known for its surf breaks, white-sand coves and an 11th-century sea temple. Bingin and Padang Padang beaches are a short drive away.",
+          "getting_around": "A scooter or a car with driver is the easiest way around. We can book a driver for you; the airport is about 40 minutes away.",
+          "wifi_name": "SECRET-WIFI-NAME",
+          "wifi_password": "SECRET-WIFI-PASSWORD"
+        },
+        "bookings": {
+          "booking_policies": {
+            "cancellation": ["100% refund 24 hours after booking accepted, if booking is requested at least 24 hours before check-in"],
+            "payment_terms": { "status": "manual", "description": ["20% due at booking", "30% due 45 days before check-in", "50% due 10 days before check-in"], "grace_period": "48 hours" }
+          },
+          "listing_markups": [{ "platform": "booking", "type": "percent", "markup": 15 }],
+          "security_deposits": [
+            { "name": "base", "type": "fixed", "value": { "amount": 12345, "formatted": "$123.45" } },
+            { "name": "direct", "type": "fixed", "value": { "amount": 12345, "formatted": "$123.45" } }
+          ],
+          "occupancy_based_rules": {
+            "guests_included": 4,
+            "extra_guest_fee": { "type": "fixed", "value": { "amount": 12345, "formatted": "$123.45" } },
+            "pet_fee": null
+          },
+          "fees": [
+            { "name": "cleaning_fee", "type": "fixed", "value": { "amount": 12345, "formatted": "$123.45" } },
+            { "name": "management_fee", "type": "percent", "value": 10 }
+          ],
+          "discounts": [{ "name": "weekly", "type": "percent", "value": 10 }, { "name": "monthly", "type": "percent", "value": 10 }],
+          "site_urls": ["https://yoursite.hospitable.rentals/property/your-property"]
+        }
+      },
+      {
+        "id": "6f1c2b9a-4d3e-4c8b-9a1e-2b7d5c0e8f41",
+        "name": "Berlin 32 Senefelderplatz – unit 2 (SECRET owner Weber)",
+        "public_name": "Bright loft at Senefelderplatz",
+        "picture": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80",
+        "address": {
+          "number": "32",
+          "street": "Senefelderplatz",
+          "city": "Berlin",
+          "state": "Berlin",
+          "country": "DE",
+          "country_name": "Germany",
+          "postcode": "10405",
+          "coordinates": { "latitude": "52.5302", "longitude": "13.4123" },
+          "display": "37a Senefelderplatz, 10405 Berlin, DE"
+        },
+        "timezone": "+0200",
+        "listed": true,
+        "amenities": ["shower", "oven", "wifi", "heating", "washer", "elevator", "coffee_maker", "dedicated_workspace", "smart_tv", "iron", "crib", "smoke_detector"],
+        "description": "A bright top-floor loft on Senefelderplatz in Prenzlauer Berg, with big windows on three sides and a view over the rooftops.\n\nThe open living space has a proper desk, a sofa that opens into a double bed and a kitchen with everything you need. The bedroom is tucked behind sliding doors.\n\nThe U2 stops right outside, so Mitte is ten minutes away.",
+        "summary": "A sunlit loft in Prenzlauer Berg with a real desk and the U-Bahn at the door.",
+        "check-in": "16:00",
+        "check-out": "10:30",
+        "currency": "EUR",
+        "capacity": { "max": 2, "bedrooms": 1, "beds": 1, "bathrooms": 1.5 },
+        "room_details": [{ "type": "bedroom", "beds": [{ "type": "king_size", "quantity": 1 }] }],
+        "house_rules": { "pets_allowed": true, "smoking_allowed": false, "events_allowed": null, "children_allowed": true, "infants_allowed": true },
+        "listings": [
+          { "platform": "airbnb", "platform_id": "24488", "platform_user_id": "string", "co_hosts": [{ "user_id": "12345", "channel_name": "Co-hosted channel" }], "platform_name": "John", "platform_email": "SECRET-airbnb2@example.com" }
+        ],
+        "ical_imports": [],
+        "ical_feed": "webcal://api.hospitable.com/v1/properties/reservations.ics?key=1&token=SECRET-6f1c2b9a&noCache",
+        "tags": [],
+        "property_type": "apartment",
+        "room_type": "entire_home",
+        "calendar_restricted": false,
+        "parent_child": null,
+        "details": {
+          "space_overview": "The loft takes up the whole top floor, with windows on three sides. A small lift goes up to the fourth floor; the last flight is a short staircase.",
+          "guest_access": "SECRET guest access: key safe code 1234",
+          "house_manual": "SECRET house manual",
+          "other_details": "",
+          "additional_rules": "Well-behaved dogs are welcome; please let us know in advance.\nThe building is residential, so please keep it down on the stairs at night.",
+          "neighborhood_description": "Senefelderplatz sits between Mitte and Prenzlauer Berg: cafés, bakeries and the Saturday market on Kollwitzplatz are all a few minutes' walk away.",
+          "getting_around": "The U2 stops at Senefelderplatz, right outside. Trams M1 and 12 are around the corner, and bikes are easy to rent.",
+          "wifi_name": "SECRET-WIFI-NAME-2",
+          "wifi_password": "SECRET-WIFI-PASSWORD-2"
+        },
+        "bookings": {
+          "booking_policies": {
+            "cancellation": ["Full refund up to 5 days before check-in.", "After that, the first night is non-refundable."],
+            "payment_terms": { "status": "disabled", "description": [], "grace_period": "48 hours" }
+          },
+          "listing_markups": [],
+          "security_deposits": [{ "name": "base", "type": "fixed", "value": { "amount": 20000, "formatted": "€200.00" } }],
+          "occupancy_based_rules": {
+            "guests_included": 2,
+            "extra_guest_fee": { "type": "fixed", "value": { "amount": 1500, "formatted": "€15.00" } },
+            "pet_fee": { "type": "fixed", "value": { "amount": 2500, "formatted": "€25.00" } }
+          },
+          "fees": [
+            { "name": "cleaning_fee", "type": "fixed", "value": { "amount": 4500, "formatted": "€45.00" } },
+            { "name": "community_fee", "type": "fixed", "value": { "amount": 400, "formatted": "€4.00" } }
+          ],
+          "discounts": [{ "name": "weekly", "type": "percent", "value": 8 }],
+          "site_urls": []
+        }
+      },
+      {
+        "id": "9d3e7f10-2a4b-4c6d-8e9f-0a1b2c3d4e5f",
+        "name": "Owner's cabin (not listed)",
+        "public_name": "Hidden Cabin",
+        "picture": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+        "address": {
+          "number": "1",
+          "street": "SECRET Road",
+          "city": "Nowhere",
+          "state": "Hidden",
+          "country": "US",
+          "country_name": "United States",
+          "postcode": "00000",
+          "coordinates": { "latitude": "0", "longitude": "0" },
+          "display": "1 SECRET Road"
+        },
+        "timezone": "-0500",
+        "listed": false,
+        "amenities": [],
+        "description": "This property is not listed and must never appear in a widget.",
+        "summary": "",
+        "check-in": "15:00",
+        "check-out": "11:00",
+        "currency": "USD",
+        "capacity": { "max": 2, "bedrooms": 1, "beds": 1, "bathrooms": 1 },
+        "room_details": [],
+        "house_rules": { "pets_allowed": false, "smoking_allowed": false, "events_allowed": null, "children_allowed": null, "infants_allowed": null },
+        "listings": [],
+        "tags": [],
+        "property_type": "cabin",
+        "room_type": "entire_home",
+        "calendar_restricted": false
+      }
+    ],
+    "images": {
+      "550e8400-e29b-41d4-a716-446655440000": [
+        { "url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=70", "caption": "Infinity pool at sunset", "order": 0, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=70", "caption": "The pool and garden", "order": 1, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=70", "caption": "Living pavilion", "order": 2, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=70", "caption": "Main bedroom with king bed", "order": 3, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=70", "caption": "Sun loungers by the pool", "order": 4, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?w=600&q=70", "caption": "Kitchen", "order": 5, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=70", "caption": "Garden bedroom", "order": 6, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=70", "caption": "Bathroom with rain shower", "order": 7, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=600&q=70", "caption": "Padang Padang beach, 10 minutes away", "order": 8, "last_updated_at": "2026-05-15T00:00:00.000000Z" }
+      ],
+      "6f1c2b9a-4d3e-4c8b-9a1e-2b7d5c0e8f41": [
+        { "url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=70", "caption": "Open-plan living space", "order": 0, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=70", "caption": "Sofa bed and reading corner", "order": 1, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=70", "caption": "Kitchen", "order": 2, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&q=70", "caption": "Bedroom with king bed", "order": 3, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=70", "caption": "Work corner", "order": 4, "last_updated_at": "2026-05-15T00:00:00.000000Z" },
+        { "url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80", "thumbnail_url": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=70", "caption": "Living room with plants", "order": 5, "last_updated_at": "2026-05-15T00:00:00.000000Z" }
+      ]
+    },
+    "reviews": {
+      "550e8400-e29b-41d4-a716-446655440000": [
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c01", "platform": "airbnb", "public": { "rating": 5, "review": "Honestly the best villa we have stayed in. The pool at sunset is unreal, and breakfast every morning was a highlight. John answered every question within minutes.", "response": "Thank you so much! We hope you come back for another sunset." }, "private": { "feedback": "SECRET private feedback: the gate squeaks", "detailed_ratings": [{ "type": "cleanliness", "rating": 5, "comment": "SECRET detailed comment" }] }, "responded_at": "2026-09-29T02:00:00Z", "reviewed_at": "2026-09-28T09:12:00Z", "can_respond": false, "guest": { "first_name": "Sophie", "last_name": "SECRETLASTNAME", "language": "en" } },
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c02", "platform": "airbnb", "public": { "rating": 5, "review": "Three families, three bedrooms, zero arguments about who got the best room, because they are all lovely. Kids lived in the pool.", "response": "" }, "private": { "feedback": "", "detailed_ratings": [] }, "responded_at": "", "reviewed_at": "2026-08-17T12:00:00Z", "can_respond": true, "guest": { "first_name": "Marco", "last_name": "SECRETLASTNAME", "language": "it" } },
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c03", "platform": "vrbo", "public": { "rating": 4, "review": "Gorgeous villa and very clean. The road up is steep and bumpy, so we were glad we had a driver.", "response": "Thanks Hannah! We've added a note about the road to our arrival guide." }, "private": { "feedback": "SECRET", "detailed_ratings": [] }, "responded_at": "2026-07-31T08:00:00Z", "reviewed_at": "2026-07-30T08:00:00Z", "can_respond": false, "guest": { "first_name": "Hannah", "last_name": "SECRETLASTNAME", "language": "de" } },
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c04", "platform": "direct", "public": { "rating": 5, "review": "Booked direct for our honeymoon and John arranged flowers and a private dinner by the pool. Perfect.", "response": "It was a pleasure to host you both. Congratulations again!" }, "private": { "feedback": "", "detailed_ratings": [] }, "responded_at": "2026-05-03T08:00:00Z", "reviewed_at": "2026-05-02T08:00:00Z", "can_respond": false, "guest": { "first_name": "Aisha", "last_name": "SECRETLASTNAME", "language": "en" } },
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c05", "platform": "airbnb", "public": { "rating": 3, "review": "Great location but the Wi-Fi dropped a few times while I was working.", "response": "Sorry about that, Tom. We've since installed a second router." }, "private": { "feedback": "SECRET", "detailed_ratings": [] }, "responded_at": "2026-03-22T08:00:00Z", "reviewed_at": "2026-03-21T08:00:00Z", "can_respond": false, "guest": { "first_name": "Tom", "last_name": "SECRETLASTNAME", "language": "en" } },
+        { "id": "7a1f0c22-5b6e-4f3a-9c8d-1e2f3a4b5c06", "platform": "booking", "public": { "rating": 5, "review": "", "response": "" }, "private": { "feedback": "", "detailed_ratings": [] }, "responded_at": "", "reviewed_at": "2026-02-14T08:00:00Z", "can_respond": true, "guest": { "first_name": "Lena", "last_name": "SECRETLASTNAME", "language": "en" } },
+        { "id": "550e8400-e29b-41d4-a716-446655440000", "platform": "airbnb", "public": { "rating": 5, "review": "Great place we will be back!", "response": "So happy you enjoyed it so much!" }, "private": { "feedback": "downstairs was a bit cold. SECRET", "detailed_ratings": [{ "type": "cleanliness", "rating": 5, "comment": "The cabin was cozy and comfy. SECRET" }] }, "responded_at": "2024-03-20T10:00:00Z", "reviewed_at": "2024-03-19T10:00:00Z", "can_respond": false, "guest": { "first_name": "Jane", "last_name": "SECRETLASTNAME", "language": "en" } }
+      ],
+      "6f1c2b9a-4d3e-4c8b-9a1e-2b7d5c0e8f41": [
+        { "id": "8b2e1d33-6c7f-4a4b-8d9e-2f3a4b5c6d01", "platform": "airbnb", "public": { "rating": 5, "review": "The light in this loft is incredible, and working from the desk by the window was a joy.", "response": "Danke, Daniel! Come back any time." }, "private": { "feedback": "", "detailed_ratings": [] }, "responded_at": "2026-10-05T08:00:00Z", "reviewed_at": "2026-10-04T08:00:00Z", "can_respond": false, "guest": { "first_name": "Daniel", "last_name": "SECRETLASTNAME", "language": "en" } },
+        { "id": "8b2e1d33-6c7f-4a4b-8d9e-2f3a4b5c6d02", "platform": "airbnb", "public": { "rating": 5, "review": "Perfect base for Berlin. Our dog loved the walks to Mauerpark, and so did we.", "response": "" }, "private": { "feedback": "", "detailed_ratings": [] }, "responded_at": "", "reviewed_at": "2026-09-12T08:00:00Z", "can_respond": true, "guest": { "first_name": "Camille", "last_name": "SECRETLASTNAME", "language": "fr" } },
+        { "id": "8b2e1d33-6c7f-4a4b-8d9e-2f3a4b5c6d03", "platform": "airbnb", "public": { "rating": 4, "review": "Lovely flat. The last flight of stairs is a bit tight with big suitcases, but worth it for the view.", "response": "Thanks for the tip! We now offer luggage drop-off downstairs." }, "private": { "feedback": "SECRET", "detailed_ratings": [] }, "responded_at": "2026-08-02T08:00:00Z", "reviewed_at": "2026-08-01T08:00:00Z", "can_respond": false, "guest": { "first_name": "Jonas", "last_name": "SECRETLASTNAME", "language": "de" } }
+      ]
+    },
+    "knowledge_hub": {
+      "550e8400-e29b-41d4-a716-446655440000": {
+        "property": { "id": 101, "name": "Relaxing Villa near the sea", "picture": null },
+        "sources": [{ "id": 1, "type": "manual", "name": "Guidebook", "state": "ready", "editable": true, "parsed_at": "2026-05-01T00:00:00Z", "metadata": {} }],
+        "topics": [
+          { "id": 10, "name": "Local attractions", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 100, "content": "Uluwatu Temple: a sea temple on the cliff edge. Go an hour before sunset for the Kecak fire dance.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" },
+            { "id": 101, "content": "Padang Padang Beach: a small cove reached through a gap in the rocks. Best in the morning before the crowds.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" },
+            { "id": 102, "content": "Melasti Beach: wide white sand below dramatic cliffs, with easy parking.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] },
+          { "id": 11, "name": "Where to eat", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 110, "content": "Single Fin: cocktails and live music above the surf break on Sunday evenings.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" },
+            { "id": 111, "content": "Warung Local: honest Balinese food for a few dollars, five minutes by scooter.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" },
+            { "id": 112, "content": "A tip that is still being processed.", "original_content": null, "is_edited": false, "state": "aggregating", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] },
+          { "id": 12, "name": "Arrival information", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 120, "content": "Check-in starts at 4pm. SECRET door code: 4711.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] }
+        ]
+      },
+      "6f1c2b9a-4d3e-4c8b-9a1e-2b7d5c0e8f41": {
+        "property": { "id": 102, "name": "Bright loft at Senefelderplatz", "picture": null },
+        "sources": [],
+        "topics": [
+          { "id": 20, "name": "Local attractions", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 200, "content": "Mauerpark: Sunday flea market and open-air karaoke, a 15-minute walk north.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" },
+            { "id": 201, "content": "Kollwitzplatz market: farmers' market on Thursdays and Saturdays, five minutes away.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] },
+          { "id": 21, "name": "Where to eat", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 210, "content": "Konnopke's Imbiss: Berlin's classic currywurst under the U-Bahn tracks.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] },
+          { "id": 22, "name": "Arrival information", "created_via": "public_api", "last_updated_via": "public_api", "updated_at": "2026-05-01T00:00:00Z", "aggregate_items": [
+            { "id": 220, "content": "Check-in starts at 4pm. SECRET key safe code 1234.", "original_content": null, "is_edited": false, "state": "ready", "created_via": "public_api", "last_updated_via": "public_api", "sources": [], "updated_at": "2026-05-01T00:00:00Z" }
+          ] }
+        ]
+      }
+    }
+  },
+  "dummy": {
+    "public_guide_topics": ["Local attractions", "Where to eat"],
+    "calendar": {
+      "550e8400-e29b-41d4-a716-446655440000": { "weekday": 32000, "weekend": 36500, "high_season_months": [7, 8, 12], "high_season_factor": 1.35, "min_stay": 3, "high_season_min_stay": 5, "occupancy": 0.62, "seed": 7 },
+      "6f1c2b9a-4d3e-4c8b-9a1e-2b7d5c0e8f41": { "weekday": 13500, "weekend": 15900, "high_season_months": [6, 7, 8, 9], "high_season_factor": 1.25, "min_stay": 2, "high_season_min_stay": 3, "occupancy": 0.7, "seed": 11 }
+    }
+  }
+}

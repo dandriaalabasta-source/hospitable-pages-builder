@@ -1,0 +1,38 @@
+{
+  "name": "hospitable-pages-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A website for your Hospitable listings, designed in a browser and served by one Cloudflare Worker in your own account.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "openapi": "node scripts/openapi-schemas.mjs"
+  },
+  "cloudflare": {
+    "bindings": {
+      "HOSPITABLE_PAT": {
+        "description": "Your Hospitable Personal Access Token. Create one in Hospitable under Apps → API access → Personal access tokens (read access is enough). Type dummy to try everything on sample data first."
+      },
+      "SITE_KEY": {
+        "description": "Paste the publish key from the builder. It can only change your site's pages, never your Hospitable data or this Worker's code."
+      },
+      "BUILDER_URL": {
+        "description": "Leave as it is."
+      },
+      "LISTINGS": {
+        "description": "Stores the last good copy of your listing data. Cloudflare creates it for you."
+      },
+      "SITE": {
+        "description": "Stores your published site and its last 10 versions. Cloudflare creates it for you."
+      }
+    }
+  },
+  "devDependencies": {
+    "vitest": "^4.1.12",
+    "wrangler": "^4.151.1"
+  }
+}

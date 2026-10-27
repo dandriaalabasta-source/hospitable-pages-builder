@@ -1,0 +1,11 @@
+# Your Hospitable Personal Access Token (Read access is enough).
+# Type dummy to run everything on sample data first.
+HOSPITABLE_PAT=dummy
+
+# The publish key. The builder generates it: copy it from its Publish dialog.
+# At least 24 characters.
+SITE_KEY=
+
+# Local development only: let a builder running on your machine publish here
+# and serve the page code from it. Uncomment the line below.
+# BUILDER_URL=http://127.0.0.1:5174/
